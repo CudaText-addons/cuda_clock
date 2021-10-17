@@ -20,13 +20,13 @@ class Command:
 
         # add statusbar cell later, so it appears in the right edge
         if not self.inited:
+            self.inited = True
+            statusbar_proc(self.id_st, STATUSBAR_ADD_CELL, tag=MYCELL)
+            statusbar_proc(self.id_st, STATUSBAR_SET_CELL_AUTOSIZE, tag=MYCELL, value=1)
             pause = 1000
             if not self.seconds:
                 pause *= 10
             timer_proc(TIMER_START, 'cuda_clock.tick', pause, '')
-            self.inited = True
-            statusbar_proc(self.id_st, STATUSBAR_ADD_CELL, tag=MYCELL)
-            statusbar_proc(self.id_st, STATUSBAR_SET_CELL_AUTOSIZE, tag=MYCELL, value=1)
 
         now = datetime.now()
         s = now.strftime(self.fmt)
