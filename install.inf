@@ -8,3 +8,9 @@ homepage=https://github.com/CudaText-addons/cuda_clock
 [item1]
 section=events
 events=on_start
+
+[item10]
+section=commands
+caption=Clock\Config
+method=config
+menu=o
