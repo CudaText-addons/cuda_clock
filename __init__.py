@@ -1,8 +1,7 @@
-import os
 from datetime import datetime
 from cudatext import *
 
-MYCELL = 110
+MYCELL = app_proc(PROC_GET_UNIQUE_TAG, '')
 
 class Command:
     id_st = 0
